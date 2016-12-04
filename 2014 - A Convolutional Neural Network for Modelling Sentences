@@ -1,0 +1,38 @@
+A Convolutional Neural Network for Modelling Sentences
+by N Kalchbrenner - 2014 - Cited by 425
+
+https://arxiv.org/abs/1404.2188
+
+They beat Socher's results for sentiment analysis
+"Recursive Deep Models for Semantic Compositionality Over a Sentiment Treebank"
+85% -> 86%
+Also they need the sentence level data. Socher's paper I think needs all subtrees to be classified. 
+
+Gist of it:
+- apply the 1d convolution operation to a variable size input
+- to reduce it to a fixed size output you can use k max pooling
+
+Properties:
+- using convolution you learn ngrams
+- you loose absolute position but maintain order and relative position
+- RecurrentNNs are sensitive to order but biased towards last words (great for language modeling, but forgets words at the begining)
+- RecursiveNNs sensitive to word order but biased to the top of the tree
+- small filters at higher levels can capture syntactic or semantic relations between phrases that are far apart in the sentence
+
+Feature map is the main building block
+ - 1d convolutional layer
+ - k max pooling layer 
+ - non linearity
+
+You can stack feature maps on eachoter.
+
+Dynamic pooling layers:
+ - each layer is a fraction of the previous
+ k_l = max(k_top, [(L - l)s/L]) l - layer index, s - lenght of the input sequence, L - number of convolutional layers
+
+Same model uses multiple feature maps.
+
+Didn't understand the part about non linear feature function, mainly about diagonals.
+Didn't fully understand why folding helps other than introducing some dependencies.
+
+Overall happy to finally have read through it.
