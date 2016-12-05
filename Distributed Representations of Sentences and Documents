@@ -1,0 +1,24 @@
+Distributed Representations of Sentences and Documents
+by QV Le - 2014 - Cited by 729
+
+Also known as doc2vec or paragraph2vec.
+Clever idea.
+
+But the results are invalid.
+"I tried myself to reproduce Quoc's results during the summer; I could get error rates on the IMDB dataset to around 9.4% - 10% (depending on how good the text normalization was). However, I could not get anywhere close to what Quoc reported in the paper (7.4% error, that's a huge difference) ... Of course we also asked Quoc about the code; he promised to publish it but so far nothing has happened. ... I am starting to think that Quoc's results are actually not reproducible."
+
+Training:
+Network with words and document embedings which predict next word given the context and document.
+
+Inference:
+Start with an random embedding for the new document.
+Sample windows from it and predict items.
+Backpropagate so you minimize the error (Keep the word embeddings fixed, and most of the network fixed).
+This will find a predictive embedding for the new doc.
+
+
+ENSEMBLE OF GENERATIVE AND DISCRIMINATIVE TECHNIQUES FOR SENTIMENTANALYSIS OF MOVIE REVIEWS
+https://arxiv.org/pdf/1412.5335v7.pdf
+In our experiments, to match the results from (Le & Mikolov, 2014), we followed the suggestion by Quoc
+Le to use hierarchical softmax instead of negative sampling. However, this produces the 92.6% accuracy result
+only when the training and test data are not shuffled. Thus, we consider this result to be invalid.
