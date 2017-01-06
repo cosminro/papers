@@ -1,0 +1,10 @@
+- why softmax instead of some other normalization?
+  - why not xi / sum(xi)?
+- how much do rnns learn. can they learn the sequence identity function. how much can they recall
+  - add some details 
+- why do you need non linearities? aren't the multiple layers enough to learn complex functions?
+- other than padding how do you deal with variable length inputs?
+  - rnn
+  - convolutions
+- how paralelizable are current dl training algos? 50?
+- why gradient descent vs randomized search?
