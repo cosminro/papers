@@ -1,0 +1,39 @@
+##Properties of Word Embeddings
+A simple property of embeddings obtained by all the methods I’ll describe is cosine similarity:
+the similarity between two words (as rated by humans on a [−1,1] scale) correlates with the cosine
+of the angle between their vectors.
+
+A more interesting property of recent embeddings is that they can solve analogy relationships via linear algebra.
+For example, the word analogy question man : woman ::king : ?? can be solved by looking for the word w such that
+vking−vw is most similar to vman−vwoman; in other words, minimizes ||vw−vking+vman−vwoman||^2.
+
+
+Yoav Goldberg in his paper
+Improving Distributional Similarity with Lessons Learned from Word Embeddings
+http://www.aclweb.org/anthology/Q15-1016
+Argues that the analogy v(king) ~ v(queen) - v(woman) + v(man) corresponds by normalisation to
+the finding the word that is close in the cos distance to qeen and man but not to woman.
+So the mapping of direction to classes of analogies is just a mirage. (Sanjev doesn't agree below)
+
+Sanjev Arora, of euclidean traveling salesman approximation scheme fame
+has a few papers and blog posts going into the interesting word2vec properties
+http://www.offconvex.org/2015/12/12/word-embeddings-1/
+intro
+
+http://www.offconvex.org/2016/02/14/word-embeddings-2/
+p[w|ct] ~ exp(v(w) * ct) - ct discourse unit 1 vector, slowly changes, next words are close
+Sanjeev does find that analogy directions exist,
+especially because the analogy training sets contain 20+ touples with examples each analogy type.
+
+http://www.offconvex.org/2016/07/10/embeddingspolysemy/
+to solve the polysemy of the same word, they use sparse coding (2000 vectors) to make each v2w a sparse linear combo
+this looks similar in a way to topic modeling
+seems to work to solve the polysemy problem
+
+sense2vec is a bandaid but this seems to get at the real problem
+
+To read
+https://arxiv.org/pdf/1606.07736v1.pdf
+Issues in evaluating semantic spaces using word analogies
+
+https://www.reddit.com/r/MachineLearning/comments/5mfjq0/p_king_man_woman_is_queen_but_why/
