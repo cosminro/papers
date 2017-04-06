@@ -8,3 +8,7 @@
   - convolutions
 - how paralelizable are current dl training algos? 50?
 - why gradient descent vs randomized search?
+- why not use squared error in classification?
+- why normalize data when doing ML?
+   - gradient descent
+   - divide data by variance (gaussian models, use one variable for variance instead of many), less parameters
