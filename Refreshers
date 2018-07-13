@@ -47,3 +47,14 @@ Numpy
 http://cs231n.github.io/python-numpy-tutorial/#numpy-array-indexing
 numpy glossary
 https://docs.scipy.org/doc/numpy-1.13.0/glossary.html
+
+ML in production
+- SRE ML at google https://www.youtube.com/watch?v=DEB8wEVxha0
+- monitor latency
+- monitor data changes, data dissapear
+- model ages so you get less accuracy
+
+Machine learning technical debt
+https://www.youtube.com/watch?v=V18AsBIHlWs
+
+https://ucbrise.github.io/cs294-rise-fa16/assets/slides/managing_the_ml_lifecycle.pdf
